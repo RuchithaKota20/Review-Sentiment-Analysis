@@ -34,7 +34,8 @@ Review-Sentiment-Analysis/
 5. **LLM add-on:** auto-generate a plain-English "top complaint themes" summary from the data
 
 ## Status
-🟡 In progress — Structured EDA complete. NLP/sentiment analysis in progress.
+🟡 In progress — **Sentiment distribution**
+- 89% of reviews scored positive, 9.5% negative, 1.5% neutral — consistent with the star rating distribution skewing toward 4-5 stars
 
 ## Key Findings (so far)
 
