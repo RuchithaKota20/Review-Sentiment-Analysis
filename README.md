@@ -35,7 +35,9 @@ Review-Sentiment-Analysis/
 
 ## Status
 🟡 In progress — **Sentiment distribution**
-- 89% of reviews scored positive, 9.5% negative, 1.5% neutral — consistent with the star rating distribution skewing toward 4-5 stars
+- 89% of reviews scored positive, 9.5% negative, 1.5% neutral — consistent with the star rating distribution skewing toward 4-5 stars.
+**VADER limitation identified**
+44.9% of 1-star reviews (336 out of 749) were scored as net-positive by VADER, revealing a key limitation of lexicon-based sentiment analysis: it struggles with sarcasm, mixed-sentiment reviews (praise for one aspect alongside criticism of another), and mild negative language that doesn't trigger strong lexicon matches. This highlights why sentiment scores should complement — not replace — star ratings when assessing customer experience.
 
 ## Key Findings (so far)
 
