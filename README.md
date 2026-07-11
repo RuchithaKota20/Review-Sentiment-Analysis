@@ -34,10 +34,16 @@ Review-Sentiment-Analysis/
 5. **LLM add-on:** auto-generate a plain-English "top complaint themes" summary from the data
 
 ## Status
-🟡 In progress — **Sentiment distribution**
+🟡 In progress — **Sentiment distribution**-closed
 - 89% of reviews scored positive, 9.5% negative, 1.5% neutral — consistent with the star rating distribution skewing toward 4-5 stars.
 **VADER limitation identified**
 44.9% of 1-star reviews (336 out of 749) were scored as net-positive by VADER, revealing a key limitation of lexicon-based sentiment analysis: it struggles with sarcasm, mixed-sentiment reviews (praise for one aspect alongside criticism of another), and mild negative language that doesn't trigger strong lexicon matches. This highlights why sentiment scores should complement — not replace — star ratings when assessing customer experience.
+🟡 In progress-## Limitations
+**VADER sentiment scoring on sarcastic/mixed reviews:** 44.9% of 1-star reviews (336 of 749) were initially scored as net-positive by VADER, a lexicon-based sentiment tool that scores text word-by-word without understanding context or sarcasm. This is a known limitation of lexicon-based approaches, not an implementation error.
+
+**Resolution:** combined star rating with VADER's sentiment score to create a `final_sentiment` label — using the rating (a direct signal from the customer) for clear-cut cases, and VADER's judgment only for ambiguous 3-star reviews. This corrected ~10% of labels dataset-wide.
+
+**Scope note:** a context-aware model (e.g. a transformer-based classifier) would likely resolve this limitation more directly, but was considered out of scope for this project to keep the analysis aligned with practical Data Analyst tooling rather than applied ML/NLP.
 
 ## Key Findings (so far)
 
